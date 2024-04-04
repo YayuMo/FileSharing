@@ -1,0 +1,42 @@
+{
+  "A": {
+    "ArrivalTime": 0,
+    "Length": 8,
+    "weight": 0
+  },
+  "B": {
+    "ArrivalTime": 5,
+    "Length": 6,
+    "weight": 0
+  },
+  "C": {
+    "ArrivalTime": 5,
+    "Length": 10,
+    "weight": 2
+  },
+  "D": {
+    "ArrivalTime": 8,
+    "Length": 9,
+    "weight": 0
+  },
+  "E": {
+    "ArrivalTime": 8,
+    "Length": 8,
+    "weight": 2
+  },
+  "F": {
+    "ArrivalTime": 10,
+    "Length": 6,
+    "weight": 0
+  },
+  "G": {
+    "ArrivalTime": 11,
+    "Length": 10,
+    "weight": 2
+  },
+  "H": {
+    "ArrivalTime": 20,
+    "Length": 8,
+    "weight": 0
+  }
+}
