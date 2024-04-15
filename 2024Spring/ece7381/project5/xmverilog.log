@@ -1,0 +1,55 @@
+xmverilog(64): 23.09-s004: (c) Copyright 1995-2023 Cadence Design Systems, Inc.
+TOOL:	xmverilog	23.09-s004: Started on Apr 09, 2024 at 17:47:13 CDT
+xmverilog
+	ymo.v
+	ymo_tb.v
+file: ymo.v
+	module worklib.MIPSALU:v
+		errors: 0, warnings: 0
+file: ymo_tb.v
+	module worklib.test_alu:v
+		errors: 0, warnings: 0
+		Caching library 'worklib' ....... Done
+	Elaborating the design hierarchy:
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.MIPSALU:v <0x5dc9417e>
+			streams:   3, words:  1704
+		worklib.test_alu:v <0x08e2803e>
+			streams:   6, words:  8737
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                 Instances  Unique
+		Modules:                 2       2
+		Registers:               4       4
+		Scalar wires:            1       -
+		Vectored wires:          4       -
+		Always blocks:           1       1
+		Initial blocks:          3       3
+		Cont. assignments:       1       1
+		Pseudo assignments:      3       -
+		Simulation timescale:  1ps
+	Writing initial simulation snapshot: worklib.test_alu:v
+Loading snapshot worklib.test_alu:v .................... Done
+xcelium> source /usr/local/cds2008/XCELIUM/tools/xcelium/files/xmsimrc
+xcelium> run
+                   0 Zero=1 ALUctl= 0 A=00000000 B=00000000 ALUOut=00000000
+                   2 Zero=0 ALUctl= 0 A=0000000c B=00000004 ALUOut=00000004
+                   4 Zero=0 ALUctl= 0 A=0000000f B=00000006 ALUOut=00000006
+                   6 Zero=0 ALUctl= 1 A=0000000f B=00000006 ALUOut=0000000f
+                   8 Zero=0 ALUctl= 1 A=0000000c B=00000004 ALUOut=0000000c
+                  10 Zero=0 ALUctl= 2 A=0000000c B=00000004 ALUOut=00000010
+                  12 Zero=0 ALUctl= 2 A=00000001 B=00000004 ALUOut=00000005
+                  14 Zero=0 ALUctl= 6 A=00000001 B=00000004 ALUOut=fffffffd
+                  16 Zero=0 ALUctl= 6 A=0000000f B=00000004 ALUOut=0000000b
+                  18 Zero=1 ALUctl= 7 A=0000000f B=00000004 ALUOut=00000000
+                  20 Zero=0 ALUctl= 7 A=00000002 B=00000004 ALUOut=00000001
+                  22 Zero=0 ALUctl=12 A=00000002 B=00000004 ALUOut=fffffff9
+                  24 Zero=0 ALUctl=12 A=0000ffff B=00000004 ALUOut=ffff0000
+                  26 Zero=0 ALUctl=14 A=0000ffff B=00000004 ALUOut=0000fffb
+                  28 Zero=0 ALUctl=14 A=0000ffff B=00000000 ALUOut=0000ffff
+Simulation complete via $finish(1) at time 128 NS + 0
+./ymo_tb.v:57          #finishtime $finish;
+xcelium> exit
+TOOL:	xmverilog	23.09-s004: Exiting on Apr 09, 2024 at 17:47:15 CDT  (total: 00:00:02)

@@ -148,140 +148,140 @@ In this section, brief information about basic quantum notations, quantum gates,
 
   - In the experiments of security teleportation, we set varied numbers of repeaters to work as the measurements in different middle nodes to verify the effectiveness of security teleportation.
 
-  - <div><table frame=void>
-    	<tr>
-            <td>
-                <div>
-                <center>
-            	<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\02.png"
-                     alt="2Repeaters"
-                     height="120"/>
-            	<br>
-            	2 Repeaters
-            	</center>
-                </div></td>    
-         	<td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\04.png"
-                     alt="4Repeaters"
-                     height="120"/>
-        		<br>
-        		4 Repeaters
-            </center></div></td>
-            <td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\06.png"
-                     alt="6Repeaters"
-                     height="120"/>
-        		<br>
-        		6 Repeaters
-            </center></div></td>
-            <td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\08.png"
-                     alt="8Repeaters"
-                     height="120"/>
-        		<br>
-        		8 Repeaters
-            </center></div></td>
-    	</tr>	
-    	<tr>
-            <td>
-                <div>
-                <center>
-            	<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\10.png"
-                     alt="10Repeaters"
-                     height="120"/>
-            	<br>
-            	10 Repeaters
-            	</center>
-                </div></td>    
-         	<td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\12.png"
-                     alt="12Repeaters"
-                     height="120"/>
-        		<br>
-        		12 Repeaters
-            </center></div></td>
-            <td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\14.png"
-                     alt="14Repeaters"
-                     height="120"/>
-        		<br>
-        		14 Repeaters
-            </center></div></td>
-            <td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\16.png"
-                     alt="16Repeaters"
-                     height="120"/>
-        		<br>
-        		16 Repeaters
-            </center></div></td>
-    	</tr>
-        	<tr>
-            <td>
-                <div>
-                <center>
-            	<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\18.png"
-                     alt="18Repeaters"
-                     height="120"/>
-            	<br>
-            	18 Repeaters
-            	</center>
-                </div></td>    
-         	<td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\20.png"
-                     alt="20Repeaters"
-                     height="120"/>
-        		<br>
-        		20 Repeaters
-            </center></div></td>
-            <td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\22.png"
-                     alt="22Repeaters"
-                     height="120"/>
-        		<br>
-        		22 Repeaters
-            </center></div></td>
-            <td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\24.png"
-                     alt="24Repeaters"
-                     height="120"/>
-        		<br>
-        		24 Repeaters
-            </center></div></td>
-    	</tr>
-        	<tr>
-            <td>
-                <div>
-                <center>
-            	<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\26.png"
-                     alt="26Repeaters"
-                     height="120"/>
-            	<br>
-            	26 Repeaters
-            	</center>
-                </div></td>    
-         	<td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\28.png"
-                     alt="28Repeaters"
-                     height="120"/>
-        		<br>
-        		28 Repeaters
-            </center></div></td>
-            <td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\30.png"
-                     alt="30Repeaters"
-                     height="120"/>
-        		<br>
-        		30 Repeaters
-            </center></div></td>
-            <td><div><center>
-        		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\32.png"
-                     alt="32Repeaters"
-                     height="120"/>
-        		<br>
-        		32 Repeaters
-            </center></div></td>
-    	</tr>
-    </table></div>
+  <div><table frame=void>
+  	<tr>
+          <td>
+              <div>
+              <center>
+          	<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\02.png"
+                   alt="2Repeaters"
+                   height="120"/>
+          	<br>
+          	2 Repeaters
+          	</center>
+              </div></td>    
+       	<td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\04.png"
+                   alt="4Repeaters"
+                   height="120"/>
+      		<br>
+      		4 Repeaters
+          </center></div></td>
+          <td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\06.png"
+                   alt="6Repeaters"
+                   height="120"/>
+      		<br>
+      		6 Repeaters
+          </center></div></td>
+          <td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\08.png"
+                   alt="8Repeaters"
+                   height="120"/>
+      		<br>
+      		8 Repeaters
+          </center></div></td>
+  	</tr>	
+  	<tr>
+          <td>
+              <div>
+              <center>
+          	<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\10.png"
+                   alt="10Repeaters"
+                   height="120"/>
+          	<br>
+          	10 Repeaters
+          	</center>
+              </div></td>    
+       	<td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\12.png"
+                   alt="12Repeaters"
+                   height="120"/>
+      		<br>
+      		12 Repeaters
+          </center></div></td>
+          <td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\14.png"
+                   alt="14Repeaters"
+                   height="120"/>
+      		<br>
+      		14 Repeaters
+          </center></div></td>
+          <td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\16.png"
+                   alt="16Repeaters"
+                   height="120"/>
+      		<br>
+      		16 Repeaters
+          </center></div></td>
+  	</tr>
+      	<tr>
+          <td>
+              <div>
+              <center>
+          	<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\18.png"
+                   alt="18Repeaters"
+                   height="120"/>
+          	<br>
+          	18 Repeaters
+          	</center>
+              </div></td>    
+       	<td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\20.png"
+                   alt="20Repeaters"
+                   height="120"/>
+      		<br>
+      		20 Repeaters
+          </center></div></td>
+          <td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\22.png"
+                   alt="22Repeaters"
+                   height="120"/>
+      		<br>
+      		22 Repeaters
+          </center></div></td>
+          <td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\24.png"
+                   alt="24Repeaters"
+                   height="120"/>
+      		<br>
+      		24 Repeaters
+          </center></div></td>
+  	</tr>
+      	<tr>
+          <td>
+              <div>
+              <center>
+          	<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\26.png"
+                   alt="26Repeaters"
+                   height="120"/>
+          	<br>
+          	26 Repeaters
+          	</center>
+              </div></td>    
+       	<td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\28.png"
+                   alt="28Repeaters"
+                   height="120"/>
+      		<br>
+      		28 Repeaters
+          </center></div></td>
+          <td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\30.png"
+                   alt="30Repeaters"
+                   height="120"/>
+      		<br>
+      		30 Repeaters
+          </center></div></td>
+          <td><div><center>
+      		<img src="C:\Users\14767\PycharmProjects\FileSharing\2024Spring\cs7344\image\32.png"
+                   alt="32Repeaters"
+                   height="120"/>
+      		<br>
+      		32 Repeaters
+          </center></div></td>
+  	</tr>
+  </table></div>
 
   - In the histograms above, we can tell the 16 and 32 repeaters could transmit the correct qubit stream, and other numbers would collapse to random distribution by measurements.
 
