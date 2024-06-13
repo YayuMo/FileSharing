@@ -27,6 +27,7 @@
 
   - Extent the QROM synthesis to more general ones.
   - The method should synthesize the QC to combinations of Pauli-X gates, Controlled-X gates, or Toffoli gates (ESOP[3] for Basic-QROM), as well as Controlled Rotation gates or general rotation gates (rotation-based synthesis [4] for Angle-QROM).
+  - One big problem with topic 1 is that Grover's algorithm depends on the use of entanglement in the diffusion filter (as well as quantum superposition). It is not clear how entanglement can be accomplished with amplitude (or angle) encoded. A new method for performing inversion about the mean would need to be created if angle- or amplitude-encoding is used for the oracle.
 
 - References
 
