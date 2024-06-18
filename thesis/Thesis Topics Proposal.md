@@ -125,3 +125,10 @@
 - References
   - [1] Mastriani M. Simplified entanglement swapping protocol for the quantum Internet[J]. Scientific Reports, 2023, 13(1): 21998.
   - [2] Medhi V N, Deka V N, Behera B K, et al. One Layer Demonstration of Quantum Internet on the IBM Q System[J].
+
+
+
+
+
+## Topic selection (For 2024.6.13 meeting)
+
