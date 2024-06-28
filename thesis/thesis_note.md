@@ -16,22 +16,39 @@
 
 ### Basis Tutorial
 
-- Basic Info
+- Basic Info (from source paper)
 
-  - | Encoding Patern     | Encoding                                                     | Req. qubits |
-    | ------------------- | ------------------------------------------------------------ | ----------- |
-    | Basic QROM          | $\sum^{n-1}_{j=0}\ket{a_j}\ket{x_j},a_j  \in \mathbb{Z}^n_2, x_j \in \mathbb{Z}^m_2$ |             |
-    | Angle QROM          | $\sum^{(n-2)/2}_{j=0}\ket{a_j}(cos(x_{2j+1})\ket{0}+e^{ix_{2j}}sin(x_{2j+1})\ket{1}),a_j  \in \mathbb{Z}^n_2, x_j \in \mathbb{Z}^m_2$ |             |
-    | Improved Angle QROM | $\sum^{(n-2)/2}_{j=0}\ket{a_j}(cos(S_j)\ket{0}+e^{iE_j}sin(S_j)\ket{1}),a_j  \in \mathbb{Z}^n_2, S_j \in [0,2\pi), E_j \in [0,2\pi)$ |             |
-    | QUAM Encoding       | $\sum^{n-1}_{j=0}\frac{1}{\sqrt{n}}\ket{x_j},x_j \in \mathbb{Z}^m_2$ |             |
-    | QRAM Encoding       | $\sum^{n-1}_{j=0}\frac{1}{\sqrt{n}}\ket{a_j}\ket{x_j},a_j  \in \mathbb{Z}^n_2, x_j \in \mathbb{Z}^m_2$ |             |
-    | Amplitude Encoding  | $\sum^{n-1}_{j=0}x_j\ket{a_j},a_j  \in \mathbb{Z}^n_2,x_j \in \mathbb{Z}^m_2$ |             |
+  - | Encoding Patern         | Encoding                                                     | Req. qubits      |
+    | ----------------------- | ------------------------------------------------------------ | ---------------- |
+    | Basis Encoding [1]      | $x=(b_{m-1},b_{m-2},...,b_0),x \in \mathbb{Z}_2^m,b_j \in \mathbb{Z}_2 \rarr \ket{x}=\ket{b_{m-1}b_{m-2}...b_0}$ | l = m            |
+    | Angle Encoding          | $x\in [0,2\pi) \rarr \otimes_{j=0}^{(N-2)/2}cos(x_{2j+1})\ket{0}+e^{ix_{2j}}sin(x_{2j+1})\ket{1}$(Dense Encoding?) [1]<br />$x \rarr \otimes_{j=0}^{N-1}cos(x_j)\ket{0}+sin(x_j)\ket{1}$(General Encoding?)[2] | 1 per data point |
+    | Amplitude Encoding [2]  | $x \rarr \sum_{i=0}^{n-1}x_i\ket{i}$, where $\sum|x_i|^2=1$  | l = log(n)       |
+    | Basic QROM [1]          | $\{\vec{a},\vec{x}\},a_j  \in \mathbb{Z}^n_2, x_j \in \mathbb{Z}^m_2\rarr \ket{\psi_x}=\sum^{n-1}_{j=0}\ket{a_j}\ket{x_j}$ |                  |
+    | Angle QROM [1]          | $\{\vec{a},\vec{x}\},a_j  \in \mathbb{Z}^n_2, x_j \in [0,2\pi) \rarr \sum^{(n-2)/2}_{j=0}\ket{a_j}(cos(x_{2j+1})\ket{0}+e^{ix_{2j}}sin(x_{2j+1})\ket{1})$ |                  |
+    | Improved Angle QROM [1] | $\{\vec{a},\vec{x}\},a_j  \in \mathbb{Z}^n_2, S_j \in [0,2\pi), E_j \in [0,2\pi) \rarr \sum^{N-1}_{j=0}\ket{a_j}(cos(S_j)\ket{0}+e^{iE_j}sin(S_j)\ket{1})$ |                  |
+    | QUAM Encoding [2]       | $\sum^{n-1}_{i=0}\frac{1}{\sqrt{n}}\ket{x_i},x_i \in \mathbb{Z}^m_2$ | l                |
+    | QRAM Encoding [2]       | $\sum^{n-1}_{j=0}\frac{1}{\sqrt{n}}\ket{a_j}\ket{x_j},a_j  \in \mathbb{Z}^n_2, x_j \in \mathbb{Z}^m_2$ | log(n) + l       |
+
+- Basic Encoding
+
+- Angle Encoding
+
+- Amplitude Encoding
 
 - Basic QROM
 
+- Angle QROM
+
+- Improved Angle QROM
+
+- QUAM Encoding
+
+- QRAM Encoding
+
+
 ### Testing method
 
-- Grover's Algorithm
+- Grover's Searching Algorithm
   - 
 - Inversion of Mean
   - 
@@ -47,3 +64,9 @@
   - ![image-20240621154955368](C:\Users\14767\AppData\Roaming\Typora\typora-user-images\image-20240621154955368.png)
   - $U_f$ represents Grover's Oracle
   - $U_{IaM}$ represents the replacement of Inversion about Mean, could be softmax or other method
+
+### References
+
+[1] Sinha A, Henderson E R, Henderson J M, et al. Automated quantum memory compilation with improved dynamic range[C]//2022 IEEE/ACM Third International Workshop on Quantum Computing Software (QCS). IEEE, 2022: 22-35.
+
+[2] Weigold M, Barzen J, Leymann F, et al. Encoding patterns for quantum algorithms[J]. IET Quantum Communication, 2021, 2(4): 141-152.
