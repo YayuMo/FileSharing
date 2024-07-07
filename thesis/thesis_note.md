@@ -217,9 +217,29 @@
 
 - **Basic QROM**
 
+  - **Quantum Read-Only Memory**
+    - A quantum read-only memory, or QROM, is a quantum state-generation circuit that evolves initialized qubits into a quantum representation of addressable, classical data. Thus, a QROM is an addressable $2^n \times m$-qubit state-generation circuit wherein $n$ qubits serve as address values that select on or more of the $N = 2^n$ data words to be generated, each with a wordsize of $m$ qubits. Addressable QROMs are advantageous, because a superposition of address values can be used to generate a superposition of stored data values for a quantum algorithm to process. Figure 1 illustrates a quantum algorithm's use of a QROM in the form of a generalized quantum circuit that consists of three distinct portions. The leftmost portion, $T_{addr}$, selects the addresses whose data is to be processed; the middle portion, $T_{data}$, is the QROM state-generation circuit that is automatically synthesized by our complier; and the rightmost portion, $T_{proc}$, consists of the data-processing portion of the quantum algorithm. Should the QROM need to be accessed again, after $T_{proc}$ executes, the second portion, $T_{data}$, can be appended to the rightmost portion, $T_{proc}$, of Figure 1. By taking advantage of a Hilbert space that grows exponentially with the number of address qubits, this addressable QROM circuit requires $n=log(N)$ address qubits entangled with each of the $N$ data values.
+      - ![image-20240706205906795](C:\Users\14767\AppData\Roaming\Typora\typora-user-images\image-20240706205906795.png)
+
+    - Reference [32] introduces the concept of a QROM as described here with a sub-circuit termed "unary iteration" that consists of control lines, address lines and accumulator output lines. Reference [32]'s basic structure is a series of multiple-controlled-NOT gates (MCX gates), where Pauli-X gates are applied as the target operation for the corresponding output qubits in what is similar to the approach we define here as "basis encoding". Reference [32] then performs an optimization referred to as "sawtooth optimization," that allows cancellation of many Toffoli gates as the cost of introducing additional ancilla qubits as targets. In Reference [33], an optimization analogous to the creation of classical pre-decoded signals, that is, the signals that make up the intermediary inputs of a wide-input gate, is used to optimize Reference [32]'s QROM method. Specifically, the optimization requires use of more qubits while reducing the exponential increase in depth that in a consequence of adding address control lines and MCX gates.
+
+  - **Comparison between QRAM and QROM** 
+    - Most other related work involves the creation of QRAM, which we briefly discuss here to differentiate it from QROM. 
+
 - **Angle QROM**
 
+  - **Encoding Definition**
+    - Angle encoding represents classical values using the parameterized qubit angles $\{\theta, \phi\}$. Thus, two $m$-bit values can be represented by a single qubit. Angle encoding requires the memory image to be interpreted, or possibly pre-normalized, such that all memory values are within the range $[0, 2 \pi)$. The mapping can be shown as $x \in [0, 2\pi) \rarr cos(x_j)\ket{0}+e^{ix_{j+1}}sin(x_j)\ket{1}$ where two classical data values are represented as $x_j$ and $x_{j+1}$ respectively
+
 - **Improved Angle QROM**
+
+  - **Encoding Definition**
+    - Improved angle encoding also represents classical values using the parameterized qubit angles $\{ \theta, \phi \}$. In this case, the angle $\theta$ represents the significand, $S$, of an $m$-bit value and the phase angle $\phi$ represents an integer exponent, $E$. Thus, a single $m$-bit value, $V$, can be represented by a single qubit as $V=S \times 2^E$. The mapping can be shown as $S,E \in [0, 2\pi) \rarr cos(S)\ket{0}+e^{iE}sin(S)\ket{1}$.
+
+- **Definition for angle and improved angle encoding on QROM**
+
+  - Given these definitions of data encoding types, we can define a mathematical model of a QROM as a set comprising two $N$-dimensional vectors, $\{ \vec{a}, \vec{x} \}$ where the $j^{th}$ components of each vector comprise the $n$-bit address field, $a_j$ and the $m$-bit data word $x_j$. Therefore, in terms of information content, the QROM comprises $N=2^n \times m$ bits of information, although the representation of the information varies depending upon the data encoding method that is employed. 
+
 
 
 ### Testing method
@@ -304,4 +324,8 @@
 [30] Prakash A. Quantum algorithms for linear algebra and machine learning[M]. University of California, Berkeley, 2014.
 
 [31] Mitarai K, Kitagawa M, Fujii K. Quantum analog-digital conversion[J]. Physical Review A, 2019, 99(1): 012301.
+
+[32] Babbush R, Gidney C, Berry D W, et al. Encoding electronic spectra in quantum circuits with linear T complexity[J]. Physical Review X, 2018, 8(4): 041015.
+
+[33] Phalak K, Alam M, Ash-Saki A, et al. Optimization of quantum read-only memory circuits[J]. arXiv preprint arXiv:2204.03097, 2022.
 
