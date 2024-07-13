@@ -18,19 +18,38 @@
 
   - **Advantage**
 
+    - Straightforward
+
+    - Could be applied in perform calculation
+
+    - Easy to construct, since only one quantum gate (Pauli-X) is needed to obtain the encoding
+
   - **Storage**
+
+    - Basis Encoding usually doesn't take storage into consideration, but
 
   - **Num of Qubit Required**
 
-    - l = n
+    - n = l
+    - the number of qubit $n$ is exactly the same as data length $l$.
 
   - **Use Cases**
 
+    - Arithmetic calculations
+
   - **Noise Model**
+
+    - Bit Flip. It could happen when one or more qubits are interfered by environments to flip $\ket{0}$ to $\ket{1}$ or $\ket{1}$ to $\ket{0}$
 
   - **Limitations**
 
+    - Since the number of qubits depends on the data length, 
+
   - **Examples**
+
+    - $$
+      \quad \quad \quad b_1b_0 \rarr \ket{q_1q_0} \\3(D) = 11(B) \rarr \ket{11}
+      $$
 
 - **Angle Encoding**
 
@@ -102,6 +121,9 @@
 
   - **Num of Qubit Required**
 
+    - $n = log_2(l)$
+    - $n$ qubits could represent $2^n$ data values.
+
   - **Use Cases**
 
   - **Noise Model**
@@ -118,7 +140,7 @@
 
   - **Brief Intro**
 
-    - Represent a collection of data elements in a quantum computer in order to perform calculations.
+    - Represent a collection of data elements in a quantum computer in order to perform calculations
 
   - **Advantage**
 
@@ -235,3 +257,12 @@
 
 ## Trial to apply an alternative method in Grover's algorithm
 
+- SoftMax
+- Sigmoid
+- ReLU
+
+
+$$
+UU^\dagger = U^\dagger U = I \\
+U^{-1} = U^\dagger
+$$
