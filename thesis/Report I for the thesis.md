@@ -20,7 +20,7 @@
 
     - Straightforward
 
-    - Could be applied in perform calculation
+    - Could be applied in performing calculations
 
     - Easy to construct, since only one quantum gate (Pauli-X) is needed to obtain the encoding
 
@@ -39,11 +39,11 @@
 
   - **Noise Model**
 
-    - Bit Flip. It could happen when one or more qubits are interfered by environments to flip $\ket{0}$ to $\ket{1}$ or $\ket{1}$ to $\ket{0}$
+    - Bit Flip. It could happen when one or more qubits are interfered by environments to flip $\ket{0}$ to $\ket{1}$ or $\ket{1}$ to $\ket{0}$.
 
   - **Limitations**
 
-    - Since the number of qubits depends on the data length, 
+    - Since the number of qubits depends on the data length, we might 
 
   - **Examples**
 
@@ -91,6 +91,10 @@
 
     - **Advantage**
 
+      - 1 qubit could encode 2 data points ($x_{2j},x_{2j+1}$)
+
+      - 
+
     - **Storage**
 
     - **Num of Qubit Required**
@@ -98,9 +102,9 @@
       - 1 each 2 data point
 
     - **Use Cases**
-
+    
     - **Noise Model**
-
+    
     - **Limitations**
     
     - **Examples**
@@ -108,7 +112,7 @@
 - **Amplitude Encoding**
 
   - $$
-    x, \sum |x_i|^2=1 \rarr \sum_{i=0}^{n-1}x_i\ket{i}
+    x \rarr \sum_{i=0}^{n-1}c_i\ket{i},c_i= \frac{x_i}{\sqrt{\sum x_i^2}}
     $$
 
   - **Brief Intro**
@@ -132,6 +136,10 @@
 
   - **Examples**
 
+    - $$
+      x=[2,3,4]^T \rarr \ket{x}=\frac{1}{\sqrt{29}}(2\ket{00}+3\ket{01}+4\ket{10})
+      $$
+
 - **Quantum Associative Memory (QuAM) Encoding**
 
   - $$
@@ -148,7 +156,7 @@
 
   - **Num of Qubit Required**
 
-    - l = n
+    - $n = size(x_i)$
 
   - **Use Cases**
 
@@ -157,6 +165,8 @@
   - **Limitations**
 
   - **Examples**
+
+    - 
 
 - **Quantum Random Access Memory (QRAM) Encoding**
 
@@ -254,15 +264,57 @@
 
   - **Examples**
 
-
 ## Trial to apply an alternative method in Grover's algorithm
 
-- SoftMax
-- Sigmoid
-- ReLU
+- The primary idea is to transfer diagonal form of formula below to unitary matrix
+
+  - Suppose we have a diagonal matrix D
+
+    - $$
+      D = 
+      	\begin{bmatrix} 
+      	\sigma(\hat{z})_0 &  \\
+      	& \sigma(\hat{z})_1 & & \\
+      	&& \ddots& \\
+      	&& &\sigma(\hat{z}_{n-1})
+      	\end{bmatrix}
+      $$
+
+    - where $\sigma(\hat{z})$ represents the function that could implement IaM (Inversion about Mean).
+
+  - Then transfer the $D$ to Unitary Matrix $U$ which follows the rule:
+
+    - $$
+      UU^\dagger = U^\dagger U = I \\
+      U^{-1} = U^\dagger
+      $$
+
+- 
+
+- **SoftMax**
+
+  - **Formula**
+
+    - $$
+      \sigma(\hat{z})_i=\frac{e^{z_i}}{\sum^n_{j=1}e^{z_j}}
+      $$
+
+- **Sigmoid**
+
+  - **Formula**
+
+    - $$
+      \sigma(\hat{z})=\frac{1}{1+e^{-z_i}}
+      $$
+
+- **ReLU**
+
+  - **Formula**
+
+    - $$
+      \sigma(\hat{z})_i=max(z_i,0) = \frac{z_i+|z_i|}{2}
+      $$
 
 
-$$
-UU^\dagger = U^\dagger U = I \\
-U^{-1} = U^\dagger
-$$
+## References
+
