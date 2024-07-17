@@ -2,7 +2,12 @@
 
 ## Problem Definition
 
-
+- It is uncertain how entanglement can be accomplished with encoded basis
+- A new method for the same functionality of Inversion about Mean should be created
+- For varied basis, the definition of oracle synthesis could be given specific results and and input, then converge the state vector of input to the output value. 
+  - For example, in amplitude encoding, the definition could be described below
+  - Suppose we have a input state vector $\ket{\psi}=\frac{1}{\sqrt{3}}\ket{00}+\frac{1}{\sqrt{3}}\ket{01}+\frac{1}{\sqrt{3}}\ket{10}= [\frac{1}{\sqrt{3}} \ \frac{1}{\sqrt{3}} \ \frac{1}{\sqrt{3}} \ 0]^T$, and a result state vector $U_f\ket{\psi}= \frac{1}{\sqrt{29}}(2\ket{00}+3\ket{01}+4\ket{10}) = [\frac{2}{\sqrt{29}} \ \frac{3}{\sqrt{29}} \ \frac{4}{\sqrt{29}} \ 0]^T$
+    - 
 
 ## Tutorial for several quantum basis
 
@@ -137,7 +142,7 @@
   - **Examples**
 
     - $$
-      x=[2,3,4]^T \rarr \ket{x}=\frac{1}{\sqrt{29}}(2\ket{00}+3\ket{01}+4\ket{10})
+      x=[2 \ 3 \ 4]^T \rarr \ket{x}=\frac{1}{\sqrt{29}}(2\ket{00}+3\ket{01}+4\ket{10})
       $$
 
 - **Quantum Associative Memory (QuAM) Encoding**
@@ -166,6 +171,14 @@
 
   - **Examples**
 
+    - $$
+      \begin{matrix} x_0 \\ x_1 \\ x_2  \end{matrix}
+      \begin{bmatrix} 0 & 1 & 0 \\ 1 & 1 & 0 \\ 0 & 1 & 1\end{bmatrix}
+      \rarr 
+      \begin{matrix} \frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{3}} \\ \frac{1}{\sqrt{3}}  \end{matrix}
+      \begin{matrix} |0 & 1 & 0\rangle + \\ |1 & 1 & 0\rangle+ \\ |0 & 1 & 1\rangle \quad \end{matrix}
+      $$
+    
     - 
 
 - **Quantum Random Access Memory (QRAM) Encoding**
