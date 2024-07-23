@@ -3,6 +3,7 @@
 # Press Shift+F10 to execute it or replace it with your code.
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 import math
+import cmath
 
 import matplotlib
 matplotlib.use('TkAgg')
@@ -14,25 +15,26 @@ def print_hi(name):
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
 def softmax(vec):
-    list = []
+    arr = np.zeros(len(vec), dtype=np.complex_)
     sum = 0
     for item in vec:
         sum += math.e ** item
-    for value in vec:
-        # list.append(math.e ** value / sum)
-        list.append(math.e ** value)
-    return list
+    for i in range(len(vec)):
+        arr[i] = cmath.sqrt(cmath.e ** vec[i] / sum)
+    return arr
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
 
-    vec = [-3,-3,-3,3]
+    vec = [-3+1j,-3+1j,-3-1j,3+1j]
     ls1 = softmax(vec)
     sum = 0
     print(ls1)
     for item in ls1:
         sum += item
     print(sum)
+    test_np = np.zeros(3)
+    print(test_np)
 
 
     # vgg16_general = plt.imread('MLFinalImage/image/VGG16_general.png')

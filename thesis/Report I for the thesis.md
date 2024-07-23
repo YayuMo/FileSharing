@@ -281,7 +281,7 @@
 
 ## Trial to apply an alternative method in Grover's algorithm
 
-- VQC approaches -- extract the state vector and apply it in a traditional matrix to 
+- VQC approaches -- extract the state vector and apply it in a traditional approach in order 
 
 - The primary idea is to transfer diagonal form of formula below to unitary matrix
 
@@ -320,8 +320,6 @@
     - $$
       e^x = \sum^\infin_{n=0}\frac{x^n}{n!} = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...
       $$
-
-    - 
 
 - **SoftMax**
 
@@ -366,12 +364,12 @@
       - $$
         U_f =
         \begin{cases}
-        z_i &, z_i>0 \\
+        \frac{1}{\sqrt{n}} &, z_i>0 \\
         0 &, z_i\leq0
         \end{cases}
         $$
   
-      - 
+      - where $n$ represents the number of target marked
   
   - **Method**
   

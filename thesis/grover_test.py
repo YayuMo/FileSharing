@@ -10,6 +10,8 @@ import cmath
 from qiskit_ibm_runtime import SamplerV2 as Sampler
 from qiskit.quantum_info import Statevector
 import matplotlib.pyplot as plt
+import matplotlib
+matplotlib.use('TkAgg')
 
 # get simulator
 SIM = Aer.get_backend('qasm_simulator')
