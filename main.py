@@ -13,9 +13,28 @@ def print_hi(name):
     # Use a breakpoint in the code line below to debug your script.
     print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
 
+def softmax(vec):
+    list = []
+    sum = 0
+    for item in vec:
+        sum += math.e ** item
+    for value in vec:
+        # list.append(math.e ** value / sum)
+        list.append(math.e ** value)
+    return list
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
+
+    vec = [-3,-3,-3,3]
+    ls1 = softmax(vec)
+    sum = 0
+    print(ls1)
+    for item in ls1:
+        sum += item
+    print(sum)
+
+
     # vgg16_general = plt.imread('MLFinalImage/image/VGG16_general.png')
     # vgg16_mel = plt.imread('MLFinalImage/image/VGG16_MEL.png')
     # vgg19_general = plt.imread('MLFinalImage/image/VGG19_general.png')
@@ -84,12 +103,12 @@ if __name__ == '__main__':
     # plt.show()
     # print_hi('PyCharm')
 
-    x = np.arange(-10, 10, 0.01)
-    y = 1 / (1 + math.e ** (-x))
-    plt.xlabel('x')
-    plt.ylabel('y')
-    plt.plot(x,y)
-    plt.show()
+    # x = np.arange(-10, 10, 0.01)
+    # y = 1 / (1 + math.e ** (-x))
+    # plt.xlabel('x')
+    # plt.ylabel('y')
+    # plt.plot(x,y)
+    # plt.show()
 
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/

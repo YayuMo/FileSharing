@@ -4,10 +4,11 @@
 
 - It is uncertain how entanglement can be accomplished with encoded basis
 - A new method for the same functionality of Inversion about Mean should be created
-- For varied basis, the definition of oracle synthesis could be given specific results and and input, then converge the state vector of input to the output value. 
+- For varied basis, the definition of oracle synthesis could be given specific results and and input, then converge the state vector of input to the output vector. 
   - For example, in amplitude encoding, the definition could be described below
-  - Suppose we have a input state vector $\ket{\psi}=\frac{1}{\sqrt{3}}\ket{00}+\frac{1}{\sqrt{3}}\ket{01}+\frac{1}{\sqrt{3}}\ket{10}= [\frac{1}{\sqrt{3}} \ \frac{1}{\sqrt{3}} \ \frac{1}{\sqrt{3}} \ 0]^T$, and a result state vector $U_f\ket{\psi}= \frac{1}{\sqrt{29}}(2\ket{00}+3\ket{01}+4\ket{10}) = [\frac{2}{\sqrt{29}} \ \frac{3}{\sqrt{29}} \ \frac{4}{\sqrt{29}} \ 0]^T$
-    - 
+  - Suppose we have a input state vector $\ket{\psi}=\frac{1}{\sqrt{3}}\ket{00}+\frac{1}{\sqrt{3}}\ket{01}+\frac{1}{\sqrt{3}}\ket{10}= [\frac{1}{\sqrt{3}} \ \frac{1}{\sqrt{3}} \ \frac{1}{\sqrt{3}} \ 0]^T$, and a result state vector $U_f\ket{\psi}= \frac{1}{\sqrt{29}}(2\ket{00}+3\ket{01}+4\ket{10}) = [\frac{2}{\sqrt{29}} \ \frac{3}{\sqrt{29}} \ \frac{4}{\sqrt{29}} \ 0]^T$. The approximated circuit could be drawn as follows:
+    - ![image-20240718161926637](C:\Users\14767\AppData\Roaming\Typora\typora-user-images\image-20240718161926637.png)
+    - The function of $U_f$ could be the convergence from $\ket{input}$ to $\ket{output}$
 
 ## Tutorial for several quantum basis
 
@@ -31,7 +32,7 @@
 
   - **Storage**
 
-    - Basis Encoding usually doesn't take storage into consideration, but
+    - Basis Encoding usually doesn't take storage into consideration, but every qubit could be mapped to classical bits accordingly, which is a perfect way to store the qubits. 
 
   - **Num of Qubit Required**
 
@@ -48,7 +49,7 @@
 
   - **Limitations**
 
-    - Since the number of qubits depends on the data length, we might 
+    - Since the number of qubits depends on the data length, which basically requires more qubits to represent data.
 
   - **Examples**
 
@@ -122,7 +123,8 @@
 
   - **Brief Intro**
 
-    - Encode data in a compact manner that do not require calculations.
+    - Encode data in a compact manner according to its original value.
+    - The coefficient $c_i$ represents the value of the data (e.g. pixel value in images), and the $i$ represents the index of data (e.g. pixel position in images)
 
   - **Advantage**
 
@@ -279,6 +281,8 @@
 
 ## Trial to apply an alternative method in Grover's algorithm
 
+- VQC approaches -- extract the state vector and apply it in a traditional matrix to 
+
 - The primary idea is to transfer diagonal form of formula below to unitary matrix
 
   - Suppose we have a diagonal matrix D
@@ -302,15 +306,44 @@
       U^{-1} = U^\dagger
       $$
 
-- 
+- **Inspiration Equation**
+
+  - **Euler's Equation**
+
+    - $$
+      e^{ix} = \cos x + i\sin x \\
+      e^{i\pi}+1 = 0
+      $$
+
+  - **Taylor Expansion**
+
+    - $$
+      e^x = \sum^\infin_{n=0}\frac{x^n}{n!} = 1+x+\frac{x^2}{2!}+\frac{x^3}{3!}+...
+      $$
+
+    - 
 
 - **SoftMax**
 
   - **Formula**
 
     - $$
-      \sigma(\hat{z})_i=\frac{e^{z_i}}{\sum^n_{j=1}e^{z_j}}
+      \sigma(\hat{z})_i=\frac{e^{z_i}}{\sum^{n-1}_{j=0}e^{z_j}}
       $$
+
+  - **Method**
+
+    - $$
+      U_f=\frac{1}{\sum^{n-1}_{j=0}e^{z_j}}
+      \begin{bmatrix} 
+      	e^{iz_0} &  \\
+      	& e^{iz_1} & & \\
+      	&& \ddots& \\
+      	&& &e^{iz_n}
+      \end{bmatrix}
+      $$
+
+    - 
 
 - **Sigmoid**
 
@@ -327,6 +360,42 @@
     - $$
       \sigma(\hat{z})_i=max(z_i,0) = \frac{z_i+|z_i|}{2}
       $$
+
+    - Oracle for basis encoding could work as 
+
+      - $$
+        U_f =
+        \begin{cases}
+        z_i &, z_i>0 \\
+        0 &, z_i\leq0
+        \end{cases}
+        $$
+  
+      - 
+  
+  - **Method**
+  
+    - Firstly apply the Reverse Oracle to $U_{grover}\ket{\psi}$, the oracle has the function of reversing the sign of every element in the state vector. The transfer matrix of $U_{reverse}$ could be represented as
+  
+      - $$
+        \begin{bmatrix}
+        -1 & & & \\
+         & -1 & & \\
+         & & -1 & \\
+         & & & -1
+        \end{bmatrix}
+        $$
+        
+      - and it's unitary
+  
+    - Extract the state vector and 
+  
+    - It could be applied to traditional Grover's Search, and it is not  
+
+## Future Works
+
+- VQC approach?
+- Parameter Embedded Circuit -- Can we transfer the original state vector into parameters and try to train the parameters to converge to a specific target vector to avoid the entanglement problem and exploit the benefits of VQA?
 
 
 ## References
