@@ -281,9 +281,42 @@
 
 ## Trial to apply an alternative method in Grover's algorithm
 
-- VQC approaches -- extract the state vector and apply it in a traditional approach in order 
+- Variational Quantum Algorithm (VQA) approaches [1]
 
-- The primary idea is to transfer diagonal form of formula below to unitary matrix
+  - In the original article, the procedure is shown as fig.
+
+    - ![img](https://ars.els-cdn.com/content/image/1-s2.0-S0030401823007411-gr1_lrg.jpg)
+
+  - The input state are required to evolve to the target state in several iterations
+
+  - And in each iteration, the measured expectation value are going through traditional process (computing loss or gradient descending) in order to adjust the variable embedded in Variational Quantum Circuit (VQC)
+
+  - In the original paper the expectation value measured are defined as
+
+    - $$
+      f(\theta) = \bra{0}U^\dagger(\theta)\hat{B}U(\theta)\ket{0}
+      $$
+
+  - Inspired by the VQA, my core idea is to extract the state vector and apply it in a traditional approach in order to fetch the required state
+
+    - ![QQ_1722484352552](C:\Users\14767\AppData\Local\Temp\QQ_1722484352552.png)
+
+  - $$
+    \begin{bmatrix}
+    \bra{0}f
+    \end{bmatrix}
+    $$
+
+  - 
+
+  - However, 
+
+  - Questions about this method
+
+    - Does the expectation value work the same as the extraction of the state vector?
+    - From a physical perspective, is it possible to directly extract the state vector output by circuit?
+
+- The primary idea is to transfer the diagonal form of the formula below to the unitary matrix
 
   - Suppose we have a diagonal matrix D
 
@@ -341,7 +374,7 @@
       \end{bmatrix}
       $$
 
-    - 
+    - What I firstly consider of was trying to build a form that is similar to 
 
 - **Sigmoid**
 
@@ -368,13 +401,13 @@
         0 &, z_i\leq0
         \end{cases}
         $$
-  
+
       - where $n$ represents the number of target marked
-  
+
   - **Method**
-  
+
     - Firstly apply the Reverse Oracle to $U_{grover}\ket{\psi}$, the oracle has the function of reversing the sign of every element in the state vector. The transfer matrix of $U_{reverse}$ could be represented as
-  
+
       - $$
         \begin{bmatrix}
         -1 & & & \\
@@ -385,16 +418,16 @@
         $$
         
       - and it's unitary
-  
+
     - Extract the state vector and 
-  
+
     - It could be applied to traditional Grover's Search, and it is not  
 
 ## Future Works
 
-- VQC approach?
-- Parameter Embedded Circuit -- Can we transfer the original state vector into parameters and try to train the parameters to converge to a specific target vector to avoid the entanglement problem and exploit the benefits of VQA?
+- Parameter Embedded Circuit -- Specifically, for Angle Encoding Series, can we transfer the original array (e.g. $$)into parameters and try to train the parameters to converge to a specific target vector to avoid the entanglement problem and exploit the benefits of VQA?
 
 
 ## References
 
+[1] Gong L H, Pei J J, Zhang T F, et al. Quantum convolutional neural network based on variational quantum circuits[J]. Optics Communications, 2024, 550: 129993.
